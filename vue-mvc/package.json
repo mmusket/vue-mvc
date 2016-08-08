@@ -1,0 +1,24 @@
+{
+  "name": "vue-mvc",
+  "version": "1.0.0",
+  "description": "Integrating vuejs with asp.net mvc",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "vuejs",
+    ".net",
+    "mvc"
+  ],
+  "author": "Marco Muscat",
+  "license": "ISC",
+  "dependencies": {
+    "vue": "^1.0.26",
+    "vue-router": "^0.7.13"
+  },
+  "devDependencies": {
+    "watchify": "^3.7.0", 
+    "browserify": "^13.1.0"
+  }
+}
