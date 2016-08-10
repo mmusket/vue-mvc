@@ -18,7 +18,13 @@
     "vue-router": "^0.7.13"
   },
   "devDependencies": {
-    "watchify": "^3.7.0", 
-    "browserify": "^13.1.0"
+    "watchify": "^3.7.0",
+    "browserify": "^13.1.0",
+    "gulp": "^3.9.1",
+    "gulp-util": "^3.0.7",
+    "fs": "^0.0.2",
+    "path": "^0.12.7",
+    "gutil": "^1.6.4",
+    "fs-path": "^0.0.22"
   }
 }
