@@ -245,6 +245,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Scripts\app\Components\" />
+    <Folder Include="Scripts\app\ExampleVueRouter\" />
     <Folder Include="Scripts\app\Home\" />
   </ItemGroup>
   <ItemGroup>
