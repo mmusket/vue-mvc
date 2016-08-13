@@ -1,0 +1,28 @@
+﻿
+@{
+    ViewBag.Title = "Preloading values using Razor";
+    Layout = "~/Views/Shared/_VueLayout.cshtml";
+}
+
+<h2>Preloading values using Razor</h2>
+
+@{
+
+}
+
+
+
+<div id="app">
+    <span>{{Description}}</span>
+    
+    <input type="text" v-model="Description" placeholder="edit me">
+</div>
+
+<script> window.preLoadeddata = JSON.parse('@Html.Raw(Model.Data)')</script>
+
+@*@{
+    var controllerName = HttpContext.Current.Request.RequestContext.RouteData.Values["Controller"].ToString();
+}
+@Scripts.Render("~/Scripts/app/" + controllerName + "/bundle.js")*@
+
+

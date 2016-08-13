@@ -73,5 +73,11 @@
     </style>
 
 
-    @Scripts.Render("Scripts/app/Home/bundle.js")
+@*@{
+    var controllerName = HttpContext.Current.Request.RequestContext.RouteData.Values["Controller"].ToString();
+}
+@Scripts.Render("~/Scripts/app/" + controllerName + "/bundle.js")*@
+
+
+
 </div>

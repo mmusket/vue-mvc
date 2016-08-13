@@ -20,7 +20,10 @@ var App = Vue.extend({});
 // Create a router instance.
 // You can pass in additional options here, but let's
 // keep it simple for now.
-var router = new VueRouter();
+var router = new VueRouter({
+    history: true,
+    root: "/vue-mvc/examplevuerouter"
+});
 
 
 
@@ -36,9 +39,9 @@ router.map({
     '/bar': {
         component: Bar
     }
-})
+});
 
 // Now we can start the app!
 // The router will create an instance of App and mount to
 // the element matching the selector #app.
-router.start(App, '#app')
+router.start(App, '#app');

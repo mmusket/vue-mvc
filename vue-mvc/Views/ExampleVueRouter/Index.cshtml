@@ -2,9 +2,8 @@
 
 @{
     ViewBag.Title = "Example with vue router";
+    Layout = "~/Views/Shared/_VueLayout.cshtml";
 }
-
-<h2>title</h2>
 
 
 <div id="app">
@@ -18,5 +17,9 @@
     <router-view></router-view>
 </div>
 
+@*@{
+    var controllerName = HttpContext.Current.Request.RequestContext.RouteData.Values["Controller"].ToString();
+}
+@Scripts.Render("~/Scripts/app/" + controllerName + "/bundle.js")*@
 
-@Scripts.Render("Scripts/app/ExampleVueRouter/bundle.js")
+
