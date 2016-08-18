@@ -3,3 +3,6 @@ vue-mvc/bin/
 packages/Microsoft.AspNet.Web.Optimization.1.1.3/lib/net40/system.web.optimization.xml
 packages/
 vue-mvc/Scripts/app/
+vue-example/node_modules/
+vue-example/bin/
+vue-example/obj/

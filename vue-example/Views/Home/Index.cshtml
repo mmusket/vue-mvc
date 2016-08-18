@@ -1,0 +1,13 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div id="app">
+    {{ message }}
+    <br/>
+    <span>coming straight from mvc! {{serverData.Name}} {{serverData.Surname}}. {{serverData.Description}}</span>
+    
+</div>
+
+
+<script> window.preLoadeddata = JSON.parse('@Html.Raw(Model.Data)')</script>

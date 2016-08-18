@@ -5,6 +5,8 @@ VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "vue-mvc", "vue-mvc\vue-mvc.csproj", "{E5F8D8A0-131E-40AB-B153-087479C4832B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "vue-example", "vue-example\vue-example.csproj", "{B5A28F3B-F745-4D8F-B626-292AE038FB1A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{E5F8D8A0-131E-40AB-B153-087479C4832B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E5F8D8A0-131E-40AB-B153-087479C4832B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E5F8D8A0-131E-40AB-B153-087479C4832B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B5A28F3B-F745-4D8F-B626-292AE038FB1A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B5A28F3B-F745-4D8F-B626-292AE038FB1A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B5A28F3B-F745-4D8F-B626-292AE038FB1A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B5A28F3B-F745-4D8F-B626-292AE038FB1A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
