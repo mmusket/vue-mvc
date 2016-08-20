@@ -15,9 +15,17 @@ namespace vue_example
 
             routes.MapRoute(
                 name: "Default",
-                url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
-            );
+                url: "{controller}/{action}/{id}/",
+                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional },
+                constraints: new { controller = "Home" }
+                );
+            
+            routes.MapRoute(
+              name: "Silo Controller",
+              url: "{controller}/{*.}",
+              defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional },
+              constraints: new { controller = "vuerouting|otherControllersCanGoHere" }
+              );
         }
     }
 }
