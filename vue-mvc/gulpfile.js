@@ -20,8 +20,15 @@ const fsPath = require('fs-path');
 var source = require('vinyl-source-stream');
 var buffer = require('vinyl-buffer');
 var es2015 = require('babel-preset-es2015');
+const aliasify = require('aliasify');
 
 
+const aliasifyConfig = {
+    aliases: {
+        'vue$': 'vue/dist/vue.js'
+    },
+    verbose: true
+}
 
 function getFolders(dir) {
     return fs.readdirSync(dir)
@@ -47,9 +54,10 @@ function watchFolder(input, output) {
         paths: paths
     });
 
+    b.transform(aliasify, aliasifyConfig);
+
     function bundle() {
         b.bundle()
-          
             .pipe(source('bundle.js'))
             .pipe(buffer())
             .pipe(sourcemaps.init({ loadMaps: true }))
@@ -76,11 +84,14 @@ function compileJS(input, output) {
         paths: paths
     });
 
-    return b.bundle()
+    return buffer()
+      .pipe(babel({ compact: false, presets: ['es2015'] }))
+      .pipe(b.transform(aliasify, aliasifyConfig)
+             .bundle())
       .pipe(source('bundle.js'))
-      .pipe(buffer())
+     // .pipe(buffer())
       .pipe(sourcemaps.init({ loadMaps: true }))
-          .pipe(babel({ compact: false, presets: ['es2015'] }))
+         // .pipe(babel({ compact: false, presets: ['es2015'] }))
           // Add transformation tasks to the pipeline here.
           .pipe(minify())
           .on('error', gutil.log)
