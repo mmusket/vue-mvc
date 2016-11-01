@@ -54,10 +54,9 @@ function watchFolder(input, output) {
         paths: paths
     });
 
-    b.transform(aliasify, aliasifyConfig);
-
     function bundle() {
-        b.bundle()
+        b.transform(aliasify, aliasifyConfig)
+            .bundle()
             .pipe(source('bundle.js'))
             .pipe(buffer())
             .pipe(sourcemaps.init({ loadMaps: true }))
@@ -74,7 +73,6 @@ function watchFolder(input, output) {
     bundle();
 }
 
-
 function compileJS(input, output) {
     // set up the browserify instance on a task basis
     var b = browserify({
@@ -84,14 +82,12 @@ function compileJS(input, output) {
         paths: paths
     });
 
-    return buffer()
-      .pipe(babel({ compact: false, presets: ['es2015'] }))
-      .pipe(b.transform(aliasify, aliasifyConfig)
-             .bundle())
+    return b.transform(aliasify, aliasifyConfig)
+        .bundle()
       .pipe(source('bundle.js'))
-     // .pipe(buffer())
+      .pipe(buffer())
       .pipe(sourcemaps.init({ loadMaps: true }))
-         // .pipe(babel({ compact: false, presets: ['es2015'] }))
+          .pipe(babel({ compact: false, presets: ['es2015'] }))
           // Add transformation tasks to the pipeline here.
           .pipe(minify())
           .on('error', gutil.log)

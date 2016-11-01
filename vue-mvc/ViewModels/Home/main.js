@@ -1,4 +1,4 @@
-﻿const Vue = require("vue");
+﻿const Vue = require("vue$");
 
 
 const v = new Vue({
